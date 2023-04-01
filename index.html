@@ -4,46 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- google font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <!-- title name -->
-    <title>Project || 03</title>
+    <title>Form </title>
 </head>
 <body>
-    <div class="container">
-        <section aria-label="navbar">
-            <nav class="navbar">
-                <div>
-                    <h1><img src="assets/white-logo.png" alt="Logo Brand Ambassador"></h1>
-                </div>
-                <div class="line"></div>
-                <div class="grow-list">
-                    <ul class="list">
-                        <li class="list-item">Apps</li>
-                        <li class="list-item">DAO</li>
-                        <li class="list-item">Technology</li>
-                        <li class="list-item">Token</li>
-                        <li class="list-item">Contributors</li>
-                    </ul>
-                </div>
-                <div>
-                    <button class="small-button">Buy 1 Token</button>
-                </div>
-            </nav>
-        </section>
-        <!-- Hero Section -->
-        <section class="aria-label">
-            <div class="hero">
-                <h1 class="hero-heading">Let's build a better tommorow, togedher.</h1>
-                <p class="hero-description">
-                    Buy 1 token, join the DAO. change the world
-                </p>
-                <button class="small-button">Request Early Access</button>
-            </div>
-        </section>
-    </div>
+    <form>
+        <fieldset>
+            <legend> &nbsp; User &nbsp;&nbsp; &#61; &nbsp; &nbsp; information</legend>
+            <label for="Enter your name">Full Name</label>
+            <br>
+            <input type="text" title="Enter name">
+            <br>
+            <label for="">Email</label>
+            <br>
+            <input type="email" title="Enter email">
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" title="Enter password">
+            <br>
+            <label for="pass">Confirm Password</label>
+            <br>
+            <input type="Password" id="pass" name="password" title="Enter password">
+            <br>
+            <label for="dob">Date of birth</label>
+            <br>
+            <input type="date" id="dob">
+            <br>
+            <br>
+            <label for="male">Gender</label>
+            <br>
+            <input type="radio" id="male" name="md">
+            <label for="male">Male</label>
+            <br>
+            <input type="radio" id="female" name="md">
+            <label for="female">Female</label>
+            <br>
+            <input type="radio" id="others" name="md">
+            <label for="others">Others</label>
+            <br>
+            <label for="add">Address</label>
+            <br>
+            <textarea name="address" id="add" cols="21" rows="2"></textarea>
+            <br>
+            <input type="submit" >
+        </fieldset>
+    </form>
 </body>
 </html>
