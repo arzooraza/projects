@@ -2,65 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- google font -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
-    </style>
-
-      <!-- link css file -->
-    <link rel="stylesheet" href="style1.css">
-
-    <title>medical</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
 </head>
+
 <body>
-    <nav>
-        <!-- image source -->
-        <img src="./assets/logo.png" alt="Logo">
-        <a href="./"></a>
-        <!-- unorder list -->
-        <ul>
-            <li> <a href="Home">Home</a> </li>
-            <li> <a href="about">About</a>  </li>
-            <li> <a href="contact">Contact Us</a></li>
-        </ul>
+    <div class="container">
+        <h1>Calculator BY AKBAR </h1>
+
+        <div class="calculator">
+            <input type="text" name="screen" id="screen">
+            <table>
+                <tr>
+                    <td><button>(</button></td>
+                    <td><button>)</button></td>
+                    <td><button>C</button></td>
+                    <td><button>%</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button>X</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button>.</button></td>
+                    <td><button>/</button></td>
+                    <td><button>=</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    </nav>
 
-    <!-- main section -->
-    <main>
-        <div class="medicaldescriptions">
-            <!-- heading about our level  -->
-            <h1>Best and Experienced Faculties</h1>
-            <!-- discription about out environment  -->
-            <p>
-                We had bring the best experts of medical field to provide you the best
-                service as possible. We are trying our best to serve the world with
-                our facilities, so that everyone can have a proper medical facility to
-                avail.
-            </p>
-        </div>
-            
-            <!-- first cards  -->
-        <div class="achievement"> 
-            <!-- our first card  -->
-            <div class="levelcards">
-                <span>20+</span>
-                <p>Doctors</p>
-            </div>
-            <!-- our second card  -->
-            <div class="levelcards">
-                <span>50,000+</span>
-                <p>patients</p>
-            </div>
-            <!-- our thard card -->
-            <div class="levelcards">
-                <span>500+</span>
-                <p>Students</p>
-            </div>
-
-        </div>
-    </main>
 </body>
+<script src="script.js"></script>
+
 </html>
