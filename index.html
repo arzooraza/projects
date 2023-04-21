@@ -1,68 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>semantic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style all input fields */
+input {
+  width: 50vh;
+  padding: 12px;
+  border: 1px solid #00ff62;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+h3{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+p{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    height: 50px;
+    margin-left: 65px;
+    background-color: #0cd88d;
+    color: white;
+}
+
+/* Style the container for inputs */
+.container {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 50%;
+    padding: 10px;
+    border-radius: 200px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #292222;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+</style>
 </head>
 <body>
-    <fieldset>
-        <legend> PW skills !!</legend>
-        <header>
-            <div>
-                <img src="PWSkills-main.png" alt="pw skills logo ">
-                <h3>this is pw skills tutorial</h3>
-            </div>
-            
-            <nav>
-                <a href="about-us.html">Contacts</a>
-                <a href="about-us.html">About</a>
-                <a href="servise-us.html">Details</a>
-                <a href="login-us">login</a>
-    
-            </nav>
-        </header>
-    
-        <main>
-            <header>
-                <h2>
-                    pw course is vary affordable in tech fild
-                </h2>
-            </header>
-            <section>
-                <header>
-                    <h3>Java | c++ | Python | data science | JavaScript</h3>
-                </header>
-                <div>Running batch for all of them</div>
-                <h4>Binary batch, impact batch, sigma batch </h4>
-                <span>At on affordable price</span>
-            </section>
-        </main>
-        <h3>fill in this form for more details</h3>
-        <form action="" id="user" method="get" target="_blank">
-            <label for="username">Enter your name:</label>
-            <br>
-            <input type="name" id="username" placeholder="Enter name">
-            <br>
-            <br>
-            <label for="emails">Enter your email:</label>
-            <br>
-            <input type="email" id="emails" placeholder="Enter email">
-            <br>
-            <br>
-            <label for="pass">Password:</label>
-            <br>
-            <input type="password" id="pass" placeholder="Enter password">
-            <br>
-            <br>
-            <input type="submit">
-        </form>
-    
-        <footer>
-            <p>Join the revolution </p>
-        </footer>
-    </fieldset>
-    
+
+<div class="head">
+    <h3>Password generator BY AKBAR </h3>
+    <p>Try to submit the form.</p>
+</div>
+
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" required>
+    <br>
+    <label for="psw">Password</label>
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+				
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
 </body>
 </html>
